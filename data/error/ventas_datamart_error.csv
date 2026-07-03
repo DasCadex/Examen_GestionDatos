@@ -1,0 +1,5 @@
+id_pedido,fecha_pedido,rut_cliente,nombre_cliente,region,producto,categoria,cantidad,precio_unitario,descuento_pct,estado_pedido,fecha_despacho,error_validacion
+272.0,2024-01-01,21177378-6,Ignacio Flores,Coquimbo,Mouse Inalambrico Logitech,tecnologia,3.0,79990.0,-5.0,entregado,,[-5.]
+33.0,2024-04-15,16803066-4,Antonella Bustos,Coquimbo,Disco SSD 500GB,tecnologia,6.0,49990.0,-5.0,entregado,2024-08-03,[-5.]
+118.0,2024-08-01,24410377-9,Catalina Nunez,OHiggins,Bolso Cuero Sintético,moda,1.0,79990.0,-5.0,entregado,2024-06-06,[-5.]
+125.0,2024-01-20,11251580-4,Juan Perez,Valparaiso,Pendrive 64GB Kingston,tecnologia,9.0,19990.0,-5.0,cancelado,,[-5.]

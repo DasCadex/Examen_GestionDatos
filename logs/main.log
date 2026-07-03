@@ -1,0 +1,78 @@
+2026-07-03 16:21:50,700 - INFO - ========================================
+2026-07-03 16:21:50,700 - INFO -    INICIO DEL PIPELINE DE DATOS
+2026-07-03 16:21:50,700 - INFO - ========================================
+2026-07-03 16:21:50,700 - INFO - >>> ETAPA 1: INGESTA
+2026-07-03 16:21:50,700 - INFO - ======== Etapa 1: Iniciando la ingesta de datos=========
+2026-07-03 16:21:50,700 - INFO - Comenzado la ingesta del archivoventas_datamart
+2026-07-03 16:21:50,702 - INFO - cargando archivo:data/raw/ventas_datamart.csv
+2026-07-03 16:21:50,702 - INFO - shape: (316, 12)filas y con  12 columnas
+2026-07-03 16:21:50,702 - INFO - lista de columnas: Index(['id_pedido', 'fecha_pedido', 'rut_cliente', 'nombre_cliente', 'region',
+       'producto', 'categoria', 'cantidad', 'precio_unitario', 'descuento_pct',
+       'estado_pedido', 'fecha_despacho'],
+      dtype='str')
+2026-07-03 16:21:50,703 - INFO - tipo de datos :id_pedido          float64
+fecha_pedido           str
+rut_cliente            str
+nombre_cliente         str
+region                 str
+producto               str
+categoria              str
+cantidad           float64
+precio_unitario        str
+descuento_pct      float64
+estado_pedido          str
+fecha_despacho         str
+2026-07-03 16:21:50,704 - INFO - Valores nulos por columna:
+id_pedido           1
+fecha_pedido        1
+rut_cliente         1
+nombre_cliente      1
+region             35
+producto            1
+categoria           1
+cantidad            1
+precio_unitario     1
+descuento_pct       1
+estado_pedido       1
+fecha_despacho     95
+2026-07-03 16:21:50,705 - INFO - Duplicados: 15
+2026-07-03 16:21:50,705 - INFO - repaldo guardado en: data/respaldo/ventas_datamart.csv
+2026-07-03 16:21:50,705 - INFO - Tablas ingestadas: ['ventas_datamart']
+2026-07-03 16:21:50,705 - INFO - Tiempo total: 0:00:00.004579
+2026-07-03 16:21:50,705 - INFO - ====== FIN ETAPA 1: INGESTA ======
+2026-07-03 16:21:50,705 - INFO - >>> ETAPA 2: LIMPIEZA
+2026-07-03 16:21:50,705 - INFO - ====== ETAPA 2: LIMPIEZA ======
+2026-07-03 16:21:50,706 - INFO - comenzando la limpiesa de datos
+2026-07-03 16:21:50,713 - WARNING - Pedidos 'entregado' sin fecha_despacho: 11
+2026-07-03 16:21:50,713 - INFO - Limpieza finalizada: 316 → 272 filas
+2026-07-03 16:21:50,715 - INFO - Guardado: data/procesado/ventas_datamart_clean.csv
+2026-07-03 16:21:50,715 - INFO - Tiempo: 0:00:00.010339
+2026-07-03 16:21:50,715 - INFO - ====== FIN ETAPA 2 ======
+2026-07-03 16:21:50,715 - INFO - >>> ETAPA 3: VALIDACIÓN
+2026-07-03 16:21:50,715 - INFO - ====== ETAPA 3: VALIDACIÓN ======
+2026-07-03 16:21:50,717 - INFO - === Validando: ventas_datamart (272 filas) ===
+2026-07-03 16:21:52,969 - INFO - Válidos:   268
+2026-07-03 16:21:52,969 - INFO - Inválidos: 4
+2026-07-03 16:21:52,970 - INFO - Tiempo: 0:00:02.254268
+2026-07-03 16:21:52,970 - INFO - ====== FIN ETAPA 3 ======
+2026-07-03 16:21:52,970 - INFO - >>> ETAPA 4: CARGA
+2026-07-03 16:21:52,970 - INFO - ====== ETAPA 4: CARGA ======
+2026-07-03 16:21:52,982 - INFO - Tablas creadas correctamente
+2026-07-03 16:21:52,996 - INFO - Tablas limpiadas correctamente
+2026-07-03 16:21:52,999 - INFO - Duplicados eliminados: 0
+2026-07-03 16:21:52,999 - INFO - Cargando ventas_datamart: 268 filas
+2026-07-03 16:21:53,015 - INFO - ✓ Commit exitoso: ventas_datamart
+2026-07-03 16:21:53,017 - INFO - === Verificación SQL ===
+2026-07-03 16:21:53,018 - INFO - ventas_datamart: 268 registros cargados
+2026-07-03 16:21:53,020 - INFO - Muestra:
+   id_pedido    nombre_cliente                      producto  precio_unitario estado_pedido
+0        2.0      Sofia Castro                Smart TV 43 LG          49990.0    despachado
+1        3.0  Valentina Torres       Purificador Aire Xiaomi          29990.0     entregado
+2        4.0  Valentina Torres      Hervidor Electrico Oster          19990.0     entregado
+3        5.0     Roberto Lopez             Tablet Samsung A8          49990.0     entregado
+4        6.0  Valentina Torres  Parka Impermeable North Face          19990.0     cancelado
+2026-07-03 16:21:53,020 - INFO - Tiempo total: 0:00:00.050442
+2026-07-03 16:21:53,020 - INFO - ====== FIN ETAPA 4 ======
+2026-07-03 16:21:53,020 - INFO - ========================================
+2026-07-03 16:21:53,020 - INFO -    PIPELINE COMPLETADO EN 0:00:02.320237
+2026-07-03 16:21:53,020 - INFO - ========================================
